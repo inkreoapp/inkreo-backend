@@ -1,38 +1,49 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
-# dependencies
-node_modules/
-
-# Expo
-.expo/
-dist/
-web-build/
-expo-env.d.ts
-
-# Native
-*.orig.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-
-# Metro
-.metro-health-check*
-
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
-
-# macOS
+# Ignore system files
 .DS_Store
-*.pem
+Thumbs.db
 
-# local env files
-.env*.local
+# Ignore environment and configuration files
+.env
+.env.local
+.env.*.local
 
-# typescript
-*.tsbuildinfo
+# Laravel specific ignores
+/vendor/
+/node_modules/
+/public/storage
+/storage/*.key
+/storage/oauth-private.key
+/storage/oauth-public.key
+/storage/framework/
+/storage/logs/
+/bootstrap/cache/
 
-app-example
+# Ignore IDE and editor specific files
+.idea/
+.vscode/
+
+# Ignore composer dependencies
+composer.lock
+
+# Ignore database files
+homestead.json
+homestead.yaml
+.phpunit.result.cache
+
+# Ignore logs and debugging files
+*.log
+*.sql
+*.sqlite
+
+# Ignore compiled assets
+/public/hot
+/public/storage
+/public/mix-manifest.json
+
+# Ignore npm debug logs
+npm-debug.log*
+yarn-error.log*
+
+# Ignore deployment files
+.deploy/
+.phpstorm.meta.php
