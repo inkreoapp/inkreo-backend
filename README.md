@@ -1,4 +1,4 @@
-# Inkreo App Frontend
+# Inkreo Backend
 
 ## Table of Contents
 
@@ -12,61 +12,68 @@
 
 ## 👇🏾 Introduction
 
-Inkreo is a cutting-edge document editing platform, similar to MS Word but enhanced with AI-powered assistance. This repository contains the React Native frontend code for the Inkreo mobile application.
+The Inkreo backend is powered by Laravel and serves as the core API for the Inkreo document editing platform. It manages authentication, document storage, AI-powered editing, and database interactions.
 
 ## ✍🏾 Getting Started
 
-To set up the project locally, follow these steps:
+To set up the backend locally, follow these steps:
 
-1. Clone the repository:  
+1. Clone the repository:
    ```sh
-   git clone https://github.com/your-org/inkreo-frontend.git
+   git clone https://github.com/your-org/inkreo-backend.git
    ```
 2. Navigate into the project directory:
    ```sh
-   cd inkreo-frontend
+   cd inkreo-backend
    ```
 3. Install dependencies:
    ```sh
-   npm install
+   composer install
    ```
-   or
+4. Copy the environment file and update settings:
    ```sh
-   yarn install
+   cp .env.example .env
    ```
-4. Start the development server:
+5. Generate the application key:
    ```sh
-   npx ex start
+   php artisan key:generate
    ```
-   or
+6. Configure database settings in `.env` (PostgreSQL, MySQL, or MariaDB supported).
+7. Run migrations and seed data:
    ```sh
-   yarn start
+   php artisan migrate --seed
+   ```
+8. Start the development server:
+   ```sh
+   php artisan serve
    ```
 
 ## ✨ Features
 
-- AI-powered document editing with real-time suggestions
-- Seamless synchronization across devices
-- Rich-text editing capabilities
-- Cloud storage integration for document management
-- Intuitive user interface with dark/light mode support
+- User authentication & role-based access
+- Document management with cloud storage integration
+- AI-powered document editing using the Gemini Model
+- RESTful API for frontend communication
+- Support for PostgreSQL, MySQL, and MariaDB
 
 ## ⚙️ Technical Stack
 
-- React Native
-- JavaScript
-- Axios
-- TailwindCSS
-- Expo
+- **Framework**: Laravel (PHP)
+- **Database**: PostgreSQL / MySQL / MariaDB
+- **AI Model**: Gemini Model
+- **Authentication**: Laravel Sanctum / Passport
+- **Storage**: AWS S3 / Local Storage
+- **Queue Management**: Laravel Queues & Redis
 
 ## 🧑🏾‍💻 Contributing
 
-We welcome contributions! Please read our [Contribution Guidelines](./CONTRIBUTING.md) to understand how to get involved. Feel free to open issues or submit pull requests.
+We welcome contributions! Please read our [Contribution Guidelines](./CONTRIBUTING.md) before submitting any pull requests.
 
 ## 🤝🏾 Code of Conduct
 
-We are committed to fostering an inclusive and welcoming community. Please read our [Code of Conduct](./CODE_OF_CONDUCT.md) for guidelines on expected behavior.
+Please follow our [Code of Conduct](./CODE_OF_CONDUCT.md) to ensure a positive community experience.
 
 ## 🗒️ License
 
-Inkreo is licensed under the [MIT License](./LICENSE).
+Inkreo Backend is licensed under the [MIT License](./LICENSE).
+
